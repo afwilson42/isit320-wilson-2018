@@ -1,0 +1,22 @@
+{
+  "name": "week02-reactbasics",
+  "version": "1.0.0",
+  "description": "learn react fundamentals",
+  "main": "npm start",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/afwilson42/isit320-wilson-2018.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Andrew Wilson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afwilson42/isit320-wilson-2018/issues"
+  },
+  "homepage": "https://github.com/afwilson42/isit320-wilson-2018#readme"
+}
