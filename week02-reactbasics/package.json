@@ -4,7 +4,9 @@
   "description": "learn react fundamentals",
   "main": "npm start",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+   "start": "node_modules/.bin/webpack-dev-server --port=30025 --mode=development",   
+   "build": "node_modules/.bin/webpack",
+   "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/afwilson42/isit320-wilson-2018/issues"
   },
-  "homepage": "https://github.com/afwilson42/isit320-wilson-2018#readme"
+  "homepage": "https://github.com/afwilson42/isit320-wilson-2018#readme",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "webpack-dev-server": "^3.1.9"
+  }
 }
