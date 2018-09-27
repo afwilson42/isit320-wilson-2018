@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSimple from './react-simple';
+import ReactBasics from './react-simple';
 
 ReactDOM.render(
-    <ReactSimple/>,
+    <ReactBasics/>,
     document.getElementById("root")
 );
