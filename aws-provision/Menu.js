@@ -34,6 +34,9 @@ if (program.provision) {
     console.log('Provision is part of JsObjects is linked from the ~/bin directory.');
 }
 
-if (program.educate) console.log('  - educate');
+if (program.educate) {
+    const awsInstanceParams = getAwsInstanceParams.awsEducate();
+    createInstance(awsInstanceParams);
+};
 
 
