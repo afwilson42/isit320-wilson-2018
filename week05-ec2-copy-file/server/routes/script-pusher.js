@@ -41,21 +41,19 @@ const copyFile = () => {
     });
 };
 
-router.get('/copy-file', function(req, res, next) { 'use strict';
+router.get('/copy-file', function (request, response, next) {
+    'use strict';
     //res.send({ result: 'successful', objName: 'script-pusher'});
-    router.get('/copy-script', function(request, response) {
-        'use strict';
-        copyFile()
-            .then((result) => {
-                console.log(JSON.stringify(result, null, 4));
-                response.send(result);
-            })
-            .catch((err) => {
-                console.log(err);
-                response.send(err);
-            })
 
-    });
+    copyFile()
+        .then((result) => {
+            console.log(JSON.stringify(result, null, 4));
+            response.send(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            response.send(err);
+        })
 });
 
 
