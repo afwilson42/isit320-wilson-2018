@@ -34,11 +34,11 @@ OLD_TAG_VERSION=`git tag --sort=taggerdate | tail -1 |  sed -En "s/v(.*)/\1/p"`
 # increment tag by 1 digit
 TAG_VERSION=v`semver-inc -p $OLD_TAG_VERSION`
 
+# get the current branch
 BRANCH=`git_branch`
 
+# create the tag string from current branch
 TAG_STRING="$1 for $2 on branch `git_branch` with tag ${TAG_VERSION}."
-
-echo $TAG_STRING
 
 function push_tag() {
   # check git status, add all, commit, and push
@@ -52,6 +52,7 @@ function push_tag() {
   git push origin "${TAG_VERSION}"
 }
 
+# run push_tag function
 push_tag
 
 
