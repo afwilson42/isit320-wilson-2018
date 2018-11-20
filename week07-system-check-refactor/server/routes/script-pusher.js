@@ -3,12 +3,10 @@ var router = express.Router();
 
 const spawn = require('child_process').spawn;
 
-let allData = '';
-
 const copyFile = () => {
 
     return new Promise(function (resolve, reject) {
-
+        let allData = '';
         console.log('Run CPU Info', process.env.SETUP_LINUXBOX);
 
         const pushScript = spawn(process.env.SETUP_LINUXBOX + '/CpuInfo');
@@ -45,10 +43,10 @@ const copyFile = () => {
 const getVersion = () => {
 
     return new Promise(function (resolve, reject) {
+        let allData = '';
+        console.log('Run getVersion', process.env.SETUP_LINUXBOX);
 
-        console.log('Run CPU Info', process.env.SETUP_LINUXBOX);
-
-        const pushScript = spawn(process.env.SETUP_LINUXBOX + '/CpuInfo');
+        const pushScript = spawn(process.env.SETUP_LINUXBOX + '/VersionCheck');
 
         pushScript.stdout.on('data', (data) => {
             console.log(`child stdout:\n${data}`);
@@ -78,8 +76,6 @@ const getVersion = () => {
         });
     });
 };
-
-
 
 router.get('/copy-file', function (request, response,) {
     'use strict';
