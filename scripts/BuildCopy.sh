@@ -9,23 +9,49 @@ NC='\033[0m' # No Color
 
 SERVER_DIR="${PWD}/../server/public"
 
+# delete old unwanted files
 function deleteOld() {
     rm -v ${SERVER_DIR}/precache-manifest*.js
     rm -v -r ${SERVER_DIR}'/static'
+
+# add code to remove these files as well....
+# asset-manifest.json
+    rm -v ${SERVER_DIR}/asset-manifest.json
+    
+# favicon.ico
+    rm -v ${SERVER_DIR}/favicon.ico
+    
+# index.html
+    rm -v ${SERVER_DIR}/index.html
+    
+# manifest.json
+    rm -v ${SERVER_DIR}/manifest.json
+    
+# precache-manifest.2efd1de520c30948b299e17d59c75fef.js
+    rm -v ${SERVER_DIR}/precache-manifest.2efd1de520c30948b299e17d59c75fef.js
+    
+# service-worker.js
+    rm -v ${SERVER_DIR}/service-worker.js
+    
+# static
+    rm -v ${SERVER_DIR}/static
 }
 
+# make new build
 function copyNew() {
     npm run build
     cp -r build/* ${SERVER_DIR}/.
 }
 
+# make new copy and delete old files
 function runAll() {
 	copyNew
 	deleteOld
 }
 
+# menu to select option of which function/s to run.
 while true; do
-    message "Menu"    
+    echo -e "$BLUE Menu"    
     echo -e "$LIGHT_GREEN  a) Delete Old Files and Run Build"
     echo -e "$LIGHT_GREEN  b) Only Build"
     echo -e "$LIGHT_GREEN  c) Only Delete"

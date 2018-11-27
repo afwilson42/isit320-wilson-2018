@@ -3,31 +3,28 @@ import './App.css';
 import ElfHeader from './ElfHeader';
 
 class App extends Component {
-
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             allData: 'No Data to Display'
         };
     }
 
-    handleChange = (event) => {
+    handleChange = event => {
         const selectedValue = event.target.value;
         console.log('HANDLE CHANGE', selectedValue);
         this.setState({
             ...this.state,
             selectedValue: selectedValue
         });
-
     };
 
-    handleSubmit= (event) => {
-        this.setState({allData: ''});
-        console.log('A name was submitted: ' , this.state);
+    handleSubmit = event => {
+        this.setState({ allData: '' });
+        console.log('A name was submitted: ', this.state);
         if (this.state.selectedValue === 'CpuInfo') {
             this.runCpuInfo(this.state.selectedValue);
-        }
-        else if (this.state.selectedValue === 'VersionCheck'){
+        } else if (this.state.selectedValue === 'VersionCheck') {
             this.runVersionInfo(this.state.selectedValue);
         }
         event.preventDefault();
@@ -36,33 +33,38 @@ class App extends Component {
     runCpuInfo = () => {
         const that = this;
         fetch('/script-pusher/copy-file')
-            .then(function (response) {
+            .then(function(response) {
                 return response.json();
             })
-            .then(function (json) {
+            .then(function(json) {
                 console.log('parsed json', json.allData);
-                that.setState({allData: json.allData});
+                that.setState({ allData: json.allData });
             })
-            .catch(function (ex) {
-                console.log('parsing failed, URL bad, network down, or similar', ex);
+            .catch(function(ex) {
+                console.log(
+                    'parsing failed, URL bad, network down, or similar',
+                    ex
+                );
             });
     };
 
     runVersionInfo = () => {
         const that = this;
         fetch('/script-pusher/getVersion')
-            .then(function (response) {
+            .then(function(response) {
                 return response.json();
             })
-            .then(function (json) {
+            .then(function(json) {
                 console.log('parsed json', json.allData);
-                that.setState({allData: json.allData});
+                that.setState({ allData: json.allData });
             })
-            .catch(function (ex) {
-                console.log('parsing failed, URL bad, network down, or similar', ex);
+            .catch(function(ex) {
+                console.log(
+                    'parsing failed, URL bad, network down, or similar',
+                    ex
+                );
             });
     };
-
 
     render() {
         const radioWeb = (
@@ -105,7 +107,7 @@ class App extends Component {
         );
         return (
             <div className="App">
-                <ElfHeader/>
+                <ElfHeader />
                 <main>
                     <section>{radioWeb}</section>
                     <section>
