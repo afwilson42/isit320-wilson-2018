@@ -9,6 +9,16 @@ NC='\033[0m' # No Color
 
 SERVER_DIR="${PWD}/../server/public"
 
+function message {
+    echo -e $BLUE
+    echo =============================
+    echo "$1"
+    echo =============================
+    echo
+}
+
+message "Build Copy Client to Server"
+
 # delete old unwanted files
 function deleteOld() {
     rm -v ${SERVER_DIR}/precache-manifest*.js
@@ -28,7 +38,7 @@ function deleteOld() {
     rm -v ${SERVER_DIR}/manifest.json
     
 # precache-manifest.2efd1de520c30948b299e17d59c75fef.js
-    rm -v ${SERVER_DIR}/precache-manifest.2efd1de520c30948b299e17d59c75fef.js
+    rm -v ${SERVER_DIR}/precache-manifest*.js
     
 # service-worker.js
     rm -v ${SERVER_DIR}/service-worker.js
@@ -43,15 +53,15 @@ function copyNew() {
     cp -r build/* ${SERVER_DIR}/.
 }
 
-# make new copy and delete old files
+#  delete old files and make new copy
 function runAll() {
-	copyNew
 	deleteOld
+	copyNew
 }
 
 # menu to select option of which function/s to run.
 while true; do
-    echo -e "$BLUE Menu"    
+    message "Menu"    
     echo -e "$LIGHT_GREEN  a) Delete Old Files and Run Build"
     echo -e "$LIGHT_GREEN  b) Only Build"
     echo -e "$LIGHT_GREEN  c) Only Delete"
