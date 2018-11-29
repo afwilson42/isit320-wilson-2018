@@ -8,6 +8,10 @@ yarn-error.log*
 # Misc
 .idea
 .c9
+*~
+*#
+*.js.map
+nohup.out
 
 # Runtime data
 pids

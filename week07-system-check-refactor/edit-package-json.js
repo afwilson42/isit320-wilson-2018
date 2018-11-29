@@ -7,7 +7,7 @@ const packageJsonConcurrently = () => {
         .then(json => {
             const packageJson = JSON.parse(json.result);
             packageJson.scripts.start =
-                "concurrently 'npm run server' 'npm run client'";
+                'concurrently "npm run server" "npm run client"';
             packageJson.scripts.server = 'babel-node server/bin/www';
             packageJson.scripts.client = 'babel-node start-client.js';
             packageJson.scripts.lint = 'eslint .';
