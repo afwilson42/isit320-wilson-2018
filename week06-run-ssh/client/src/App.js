@@ -12,7 +12,7 @@ class App extends Component {
 
     runCpuInfo = () => {
         const that = this;
-        fetch('/call-cpu-info')
+        fetch('/ssh-runner/call-cpu-info')
             .then(function (response) {
                 return response.json();
             })
