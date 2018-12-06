@@ -13,6 +13,9 @@ NC='\033[0m' # No Color
 export SYSTEMD_PROJECT_NAME=scref
 export SYSTEMD_DESCRIPTION="SystemCheck Refactor Service"
 export SYSTEMD_PORT="ELF_SCREF_PORT=30030"
+export SYSTEMD_PROJECT_NAME=midterm
+export SYSTEMD_DESCRIPTION="Midterm Service"
+export SYSTEMD_PORT="MIDTERM_PORT=30035"
 
 # This export does not need to be edited. It is derived from the lines above.
 export SERVICE_FILE=$SYSTEMD_PROJECT_NAME.service
