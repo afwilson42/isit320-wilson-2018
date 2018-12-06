@@ -94,6 +94,18 @@ class App extends Component {
                             <label htmlFor="elf-radio-version">
                                 Version Info
                             </label>
+
+                            <input
+                                type="radio"
+                                name="app-choice"
+                                data-endpoint="0"
+                                value="Uptime"
+                                id="elf-radio-version"
+                                onChange={this.handleChange}
+                            />
+                            <label htmlFor="elf-radio-version">
+                                UpTime
+                            </label>
                         </div>
 
                         <div className="form-group">
