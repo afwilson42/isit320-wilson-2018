@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import { shallow } from 'enzyme';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -12,14 +11,14 @@ configure({ adapter: new Adapter() });
 describe('basic suite', function() {
     it('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<App />, div);
+        ReactDOM.render(<ElfHeader />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
 
     it('renders h1 header', () => {
-        const wrapper = shallow(<App />);
+        const wrapper = shallow(<ElfHeader />);
         console.log(wrapper.debug());
-        const unknown = <ElfHeader />;
+        const unknown = <h1>System Check</h1>;
         elfDebugEnzyme.getLast(wrapper, 'h1', true);
         expect(wrapper.contains(unknown)).toEqual(true);
     });

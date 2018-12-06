@@ -1,4 +1,4 @@
 #! /bin/bash
 
-sudo systemctl enable midterm.service
-sudo systemctl start midterm.service
+sudo systemctl enable scref.service
+sudo systemctl start scref.service

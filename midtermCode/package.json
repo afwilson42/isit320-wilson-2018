@@ -1,5 +1,5 @@
 {
-    "name": "midterm",
+    "name": "week07-system-check-refactor",
     "version": "1.0.0",
     "description": "",
     "main": "edit-package-json.js",
@@ -17,7 +17,6 @@
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.3",
         "elven-code": "^4.5.0",
-        "eslint-config-react-app": "^3.0.5",
         "express": "^4.16.4"
     },
     "devDependencies": {
