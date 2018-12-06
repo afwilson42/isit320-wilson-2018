@@ -15,7 +15,9 @@
         "no-cond-assign": ["error", "always"],
 
         // disable rules from base configurations
-        "no-console": "off"
+        "no-console": "off",
+
+        "no-control-regex": "off"
     },
     "parser":  "babel-eslint",
     "parserOptions": {
