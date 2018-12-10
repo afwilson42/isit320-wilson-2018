@@ -6,7 +6,7 @@ class ElfHeader extends Component {
         return (
             <div className="App">
                 <header>
-                    <h1>System Check</h1>
+                    <h1>Midterm</h1>
                 </header>
             </div>
         );
